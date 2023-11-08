@@ -1,0 +1,100 @@
+<div id="container" class="min-h-screen bg-[#171717] text-[white]">
+    <div class="flex justify-between items-center">
+        <div id="header" class="p-[20px] flex gap-4 items-center ml-[30px]">
+            <i class="fa-solid fa-cloud text-lg"></i>
+            <h1 class="text-[25px]">W-for-Weather</h1>
+        </div>
+        <div class="flex gap-[10px] items-center mr-[40px]">
+            <i class="fa-solid fa-location-dot"></i>
+            <p class="text-[16px] font-semibold"> {{weatherData?.name}}, {{countryName}} </p>
+        </div>
+    </div>
+
+    <div id="seaction" class="min-h-screen flex justify-center">
+        <div id="dashboard" class="w-[600px] rounded-lg p-[10px] mt-[40px] mb-[50px]">
+            <div id="dash-nav" class="flex justify-between items-center">
+                <div class="flex items-center gap-[40px]">
+                    <form class="relative flex justify-center items-center">
+                        <input name="cityName" [(ngModel)]="cityName" (change)="handleChange()" type="text"
+                            placeholder="Search for a city..."
+                            class="border-none bg-[#1e1e1e] outline-none text-white py-[0.5rem] px-[2.5rem] rounded-[5px] placeholder:text-white">
+                        <i
+                            class="fa-solid fa-magnifying-glass absolute left-[10px] top-[13px] text-[15px] text-white"></i>
+                    </form>
+                    <div (click)="handleRefresh()" class="cursor-pointer">
+                        <i class="fa-solid fa-arrows-rotate text-[20px]"></i>
+                    </div>
+                </div>
+
+                <div class="text-[1.5rem] flex gap-[30px] font-bold">
+                    <button (click)="handleCelcius()"
+                        class="py-[5px] px-[10px] text-center rounded-md shadow-sm shadow-slate-500">&deg;C</button>
+                    <button (click)="handleFarenheight()"
+                        class="py-[5px] px-[10px] text-center rounded-md shadow-sm shadow-slate-500">&deg;F</button>
+                </div>
+            </div>
+
+            <div id="dash-body" class="text-center mt-[3rem]">
+                <h1 class="text-[40px] font-bold space-x-4">{{weatherData.name}}, {{countryName}}</h1>
+                <p class="text-[20px]">{{timeStamp}}</p>
+                <p class="inline-block mt-[30px] bg-[#1e1e1e] py-[0.5rem] px-[1rem] rounded-[30px]">
+                    {{weatherData.weather[0].main}}</p>
+
+                <div id="weather-icon" class="w-[100px] m-auto mt-[30px]">
+                    <img src="http://openweathermap.org/img/wn/{{weatherData.weather[0].icon}}@4x.png" class="w-[100px]"
+                        alt="weather-icon" />
+                </div>
+
+                <p class="text-[1.75rem] font-bold mt-[30px]">{{weatherData.main.temp.toFixed()}}&deg;{{unit ===
+                    "metric" ? "C" : "F"}}</p>
+                <div id="min-max-temp" class="flex justify-center font-bold">
+                    <p class="text-[16px] m-[0.5rem]">Min: {{weatherData.main.temp_min.toFixed()}}&deg;</p>
+                    <p class="text-[16px] m-[0.5rem]">Max: {{weatherData.main.temp_max.toFixed()}}&deg;</p>
+                </div>
+
+                <div id="weather-info" class="grid grid-cols-2 gap-4 mt-12">
+                    <div id="weather-card" class="flex items-center bg-[#1e1e1e] p-4 rounded-[10px]">
+                        <i class="fa-solid fa-temperature-full text-[1.5rem] mr-4"></i>
+                        <div>
+                            <p class="text-[20px] font-bold">Real Feel</p>
+                            <p class="font-bold text-left">{{weatherData.main.feels_like.toFixed()}}&deg;</p>
+                        </div>
+                    </div>
+
+                    <div id="weather-card" class="flex items-center bg-[#1e1e1e] p-4 rounded-[10px]">
+                        <i class="fa-solid fa-droplet text-[1.5rem] mr-4"></i>
+                        <div>
+                            <p class="text-[20px] font-bold">Humidity</p>
+                            <p class="font-bold text-left">{{weatherData.main.humidity}}%</p>
+                        </div>
+                    </div>
+
+                    <div id="weather-card" class="flex items-center bg-[#1e1e1e] p-4 rounded-[10px]">
+                        <i class="fa-solid fa-wind text-[1.5rem] mr-4"></i>
+                        <div>
+                            <p class="text-[20px] font-bold">Wind</p>
+                            <p class="font-bold text-left">{{weatherData.wind.speed}} {{unit==="imperial"? "mph":"m/s"}}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="weather-card" class="flex items-center bg-[#1e1e1e] p-4 rounded-[10px]">
+                        <i class="fa-solid fa-gauge-high text-[1.5rem] mr-4"></i>
+                        <div>
+                            <p class="text-[20px] font-bold">Pressure</p>
+                            <p class="font-bold text-left">{{weatherData.main.pressure}} hPa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer" class="p-1 ml-[20px] pb-[20px] flex gap-3 items-center">
+        <a href="https://github.com/shatrukumar47/W-for-Weather" target="_blank">
+            <i class="fa-brands fa-github text-[24px]"></i>
+        </a>
+        <span>shatrukumar47@gmail.com</span>
+    </div>
+</div>
