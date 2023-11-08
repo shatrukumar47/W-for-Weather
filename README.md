@@ -1,27 +1,37 @@
-# WWeather
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+# W-for-Weather.
 
-## Development server
+# About Project:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Welcome to the Weather App, a simple web application that allows you to check the current weather conditions in different cities around the world.
 
-## Code scaffolding
+##
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Deployment Link
 
-## Build
+[netlify](https://just-do-it-eta.vercel.app/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🛠 TechStacks 💻
 
-## Running unit tests
+FRONTEND -
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Angular  | Tailwind CSS  | Javascript | HTML5 | CSS3 | Weather API
 
-## Running end-to-end tests
+## 📄 Pages
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Weather Dashboard
 
-## Further help
+## ⚡ Features
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Check the Weather of any city around the world.
+- Check Temperature in Degree Celcius or Fahrenheit.
+
+# Snap Shots 📷
+## Weather Dashboard
+![w-for-weather](https://github.com/shatrukumar47/W-for-Weather/assets/123942835/c4e76478-b9b9-42f2-8fec-a047f72653ca)
+
+
+
+
+
+
